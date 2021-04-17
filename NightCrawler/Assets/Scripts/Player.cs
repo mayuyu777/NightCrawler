@@ -8,6 +8,12 @@ public class Player : MonoBehaviour
     private bool isMoving;
     private Vector2 input;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void Update()
     {
         if (!isMoving)
@@ -16,8 +22,12 @@ public class Player : MonoBehaviour
             input.y = Input.GetAxisRaw("Vertical");
 
 
+            if (input.x != 0) input.y = 0;
             if (input != Vector2.zero)
             {
+                animator.SetFloat("X", input.x);
+                animator.SetFloat("Y", input.y);
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -26,6 +36,7 @@ public class Player : MonoBehaviour
             }
 
         }
+        animator.SetBool("isMoving", isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
