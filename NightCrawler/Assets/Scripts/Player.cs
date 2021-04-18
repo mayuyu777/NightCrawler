@@ -17,7 +17,13 @@ public class Player : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("X", movement.x);
         animator.SetFloat("Y", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if( movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+        {
+            animator.SetFloat("LastMoveX", movement.x);
+            animator.SetFloat("LastMoveY", movement.y);
+        }
+
     }
 
     private void FixedUpdate()
