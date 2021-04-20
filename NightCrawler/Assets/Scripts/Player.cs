@@ -5,42 +5,30 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    private bool isMoving;
-    private Vector2 input;
+    public Rigidbody2D rb;
+    Vector2 movement;
 
+    public Animator animator;
+
+  
     private void Update()
     {
-        if (!isMoving)
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("X", movement.x);
+        animator.SetFloat("Y", movement.y);
+
+        if( movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-
-
-            if (input != Vector2.zero)
-            {
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
-
-                StartCoroutine(Move(targetPos));
-            }
-
+            animator.SetFloat("LastMoveX", movement.x);
+            animator.SetFloat("LastMoveY", movement.y);
         }
+
     }
 
-    IEnumerator Move(Vector3 targetPos)
+    private void FixedUpdate()
     {
-        isMoving = true;
-
-        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-
-        transform.position = targetPos;
-
-        isMoving = false;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
 }
