@@ -8,8 +8,17 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
 
+    public int maxhealth = 150;
+    public int currenthealth;
+    public Healthbar healthbar;
+
     public Animator animator;
 
+    void Start()
+    {
+        currenthealth = maxhealth;
+        healthbar.SetMaxHealth(maxhealth);
+    }
   
     private void Update()
     {
@@ -24,6 +33,18 @@ public class Player : MonoBehaviour
             animator.SetFloat("LastMoveY", movement.y);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            takeDamage(7);
+        }
+
+    }
+
+    void takeDamage(int damage)
+    {
+        currenthealth -= damage;
+        if (currenthealth < 0) { currenthealth = 0; }
+        healthbar.SetHealth(currenthealth);
     }
 
     private void FixedUpdate()
