@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int maxhealth = 150;
     public int currenthealth;
     public Healthbar healthbar;
+  
 
     public Animator animator;
 
