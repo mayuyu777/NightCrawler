@@ -9,6 +9,7 @@ public class shooting : MonoBehaviour
     public int maxmana = 150;
     public int currentmana;
     public Manabar manabar;
+    public int usage = 2;
 
     public float fireforce = 20f;
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (useMana(3)){ shoot(); }
+            if (useMana(usage)){ shoot(); }
         }
     }
 

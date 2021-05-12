@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Weapons
   layers:
   - Default
   - TransparentFX
@@ -50,12 +51,12 @@ TagManager:
   - name: Collision
     uniqueID: 1046154529
     locked: 0
-  - name: Other
-    uniqueID: 1333550439
-    locked: 0
   - name: Player
     uniqueID: 247465277
     locked: 0
   - name: Weapon
     uniqueID: 688541007
+    locked: 0
+  - name: Other
+    uniqueID: 1333550439
     locked: 0
