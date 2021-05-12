@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2136315808294703164}
   - component: {fileID: 2136315808294703166}
   - component: {fileID: -4189920604623611858}
+  - component: {fileID: -6553362764709990360}
   m_Layer: 0
   m_Name: GoldSword
   m_TagString: Weapons
@@ -131,3 +132,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6553362764709990360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136315808294703163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d307ab094c2c17642b9ffe36ce54cc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire: {fileID: 5820377385492866354, guid: c7d8031ab17b771408badd1c6ccb9509, type: 3}
+  explosion: {fileID: 7894116298423022484, guid: e8e233f22d0af0a4687a6d2c53f0c346,
+    type: 3}
