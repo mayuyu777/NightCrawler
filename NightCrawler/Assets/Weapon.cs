@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
 {
     public GameObject weapon;
     SpriteRenderer weaponrender;
+    public shooting fire;
 
 
     // Start is called before the first frame update
@@ -18,7 +19,9 @@ public class Weapon : MonoBehaviour
         {
             weaponrender = weapon.GetComponent<SpriteRenderer>();
             SpriteRenderer newweaponrender = collision.gameObject.GetComponent<SpriteRenderer>();
+            GameObject newfire = collision.gameObject.GetComponent<WeaponDetail>().fire;
             weaponrender.sprite = newweaponrender.sprite;
+            fire.fire = newfire;
             Destroy(collision.gameObject);
         }
     }
