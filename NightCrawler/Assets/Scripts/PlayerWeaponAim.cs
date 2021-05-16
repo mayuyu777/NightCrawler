@@ -28,13 +28,4 @@ using CodeMonkey.Utils;
             aimTransform.eulerAngles = new Vector3(0, 0, angle);
         }
 
-        private void WeaponAttack()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-               
-            }
-        }
-
-
     }

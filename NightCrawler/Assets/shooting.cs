@@ -42,4 +42,11 @@ public class shooting : MonoBehaviour
         manabar.SetMana(currentmana);
         return flag;
     }
+
+    public void increasemana(int mana)
+    {
+        currentmana += mana;
+        currentmana = (currentmana >= maxmana)? maxmana: currentmana;
+        manabar.SetMana(currentmana);
+    }
 }

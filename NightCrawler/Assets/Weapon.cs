@@ -18,10 +18,9 @@ public class Weapon : MonoBehaviour
         if (collision.gameObject.tag == "Weapons")
         {
             weaponrender = weapon.GetComponent<SpriteRenderer>();
-            SpriteRenderer newweaponrender = collision.gameObject.GetComponent<SpriteRenderer>();
-            GameObject newfire = collision.gameObject.GetComponent<WeaponDetail>().fire;
-            weaponrender.sprite = newweaponrender.sprite;
-            fire.fire = newfire;
+            weaponrender.sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
+            fire.fire = collision.gameObject.GetComponent<WeaponDetail>().fire;
+            fire.usage = collision.gameObject.GetComponent<WeaponDetail>().usage;
             Destroy(collision.gameObject);
         }
     }
