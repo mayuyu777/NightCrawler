@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     public int health = 20;
     public GameObject floatingpoint;
+    public GameObject droppotion;
 
     void Start()
     {
@@ -123,8 +124,8 @@ public class EnemyAI : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                Instantiate(droppotion, transform.position, Quaternion.identity);
             }
-    
 
         }
      

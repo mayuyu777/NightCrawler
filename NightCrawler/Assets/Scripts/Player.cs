@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public int maxhealth = 150;
     public int currenthealth;
     public Healthbar healthbar;
-  
 
     public Animator animator;
 
@@ -65,6 +64,7 @@ public class Player : MonoBehaviour
 
         }else if(collision.gameObject.tag == "health")
         {
+
             int health = collision.gameObject.GetComponent<healthpotion>().health;
             currenthealth = ((currenthealth + health) >= maxhealth) ? maxhealth : currenthealth + health;
             healthbar.SetHealth(currenthealth);
