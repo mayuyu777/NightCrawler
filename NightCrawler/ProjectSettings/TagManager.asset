@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapons
+  - Enemy
+  - bullet
+  - Enemyfire
+  - mana
+  - health
   layers:
   - Default
   - TransparentFX

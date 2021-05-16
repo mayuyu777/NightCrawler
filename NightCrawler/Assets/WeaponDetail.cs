@@ -5,4 +5,5 @@ using UnityEngine;
 public class WeaponDetail : MonoBehaviour
 {
     public GameObject fire;
+    public int usage = 2;
 }

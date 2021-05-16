@@ -34,11 +34,6 @@ public class Player : MonoBehaviour
             animator.SetFloat("LastMoveY", movement.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            takeDamage(7);
-        }
-
     }
 
     void takeDamage(int damage)
@@ -51,6 +46,30 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemyfire")
+        {
+
+            int damage = collision.gameObject.GetComponent<enemyfire>().damage;
+            takeDamage(damage);
+
+        }else if(collision.gameObject.tag == "mana")
+        {
+            int mana  = collision.gameObject.GetComponent<manapotion>().mana;
+            shooting shootscript = gameObject.GetComponent<shooting>();
+            shootscript.increasemana(mana);
+            Destroy(collision.gameObject);
+
+        }else if(collision.gameObject.tag == "health")
+        {
+            int health = collision.gameObject.GetComponent<healthpotion>().health;
+            currenthealth = ((currenthealth + health) >= maxhealth) ? maxhealth : currenthealth + health;
+            healthbar.SetHealth(currenthealth);
+            Destroy(collision.gameObject);
+        }
     }
 
 }
