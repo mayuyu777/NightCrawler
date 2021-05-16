@@ -21,6 +21,7 @@ public class Weapon : MonoBehaviour
             weaponrender.sprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
             fire.fire = collision.gameObject.GetComponent<WeaponDetail>().fire;
             fire.usage = collision.gameObject.GetComponent<WeaponDetail>().usage;
+            fire.damage = collision.gameObject.GetComponent<WeaponDetail>().damage;
             Destroy(collision.gameObject);
         }
     }

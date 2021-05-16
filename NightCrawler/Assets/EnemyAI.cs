@@ -23,6 +23,8 @@ public class EnemyAI : MonoBehaviour
     public float nextshoot;
     private bool attack;
 
+    public int health = 20;
+    public GameObject floatingpoint;
 
     void Start()
     {
@@ -103,6 +105,29 @@ public class EnemyAI : MonoBehaviour
         GameObject bullet = Instantiate(fire, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * fireforce, ForceMode2D.Impulse);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "bullet")
+        {
+
+           Player player = FindObjectOfType<Player>();
+            shooting shoot= player.GetComponent<shooting>();
+            health -= shoot.damage;
+
+            GameObject points = Instantiate(floatingpoint, transform.position, Quaternion.identity) as GameObject;
+            points.transform.GetChild(0).GetComponent<TextMesh>().text = shoot.damage.ToString();
+            Destroy(points, 0.5f);
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+    
+
+        }
+     
     }
 
 

@@ -10,6 +10,7 @@ public class shooting : MonoBehaviour
     public int currentmana;
     public Manabar manabar;
     public int usage = 2;
+    public int damage = 5;
 
     public float fireforce = 20f;
     // Update is called once per frame

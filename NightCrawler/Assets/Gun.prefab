@@ -146,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 6376109374764191913, guid: 61e74d8ffc549bb42b97c9f334bc838b, type: 3}
   usage: 2
+  damage: 5
