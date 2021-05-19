@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7861846238485014313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.44, y: 11.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 7861846239739475948}
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 27057911
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5bc75181e15cc8b4fb0325d561bd7a99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -128,13 +128,19 @@ MonoBehaviour:
   fire: {fileID: 9098813350038169613, guid: 1b354159f1d56ac40b2b4a20c8d8f2fe, type: 3}
   fireforce: 10
   nextshoot: 0
-  health: 20
+  health: 10
   floatingpoint: {fileID: 4127187423711595511, guid: 4344b05aee2e4c345a8a436f3bbf6e7e,
     type: 3}
-  droppotion: {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d,
-    type: 3}
+  droppotion:
+  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
+  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
+  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
+  - {fileID: 5159794216913557024, guid: d09ddec99a41b1743b308604e1eec639, type: 3}
+  - {fileID: 5159794216913557024, guid: d09ddec99a41b1743b308604e1eec639, type: 3}
+  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
   isbattlestart: 0
   home: {fileID: 0}
+  battleSystem: {fileID: 0}
 --- !u!61 &7861846238485014317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -305,7 +311,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 688541007
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 838a24db6d4256d429b7fa7c7162683d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
