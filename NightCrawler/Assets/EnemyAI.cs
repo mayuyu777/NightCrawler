@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     public int health = 20;
     public GameObject floatingpoint;
-    public GameObject droppotion;
+    public GameObject[] droppotion;
     public bool isbattlestart = false;
     public Transform home;
     public BattleSystem battleSystem;
@@ -109,7 +109,8 @@ public class EnemyAI : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
-                Instantiate(droppotion, transform.position, Quaternion.identity);
+                int index = Random.Range(0,droppotion.Length);
+                Instantiate(droppotion[index], transform.position, Quaternion.identity);
                 battleSystem.enemyCount--;
             }
 

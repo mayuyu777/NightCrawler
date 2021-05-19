@@ -62,14 +62,14 @@ TagManager:
   - name: enemy
     uniqueID: 27057911
     locked: 0
+  - name: gate
+    uniqueID: 3073449601
+    locked: 0
   - name: Player
     uniqueID: 247465277
     locked: 0
   - name: Weapon
     uniqueID: 688541007
-    locked: 0
-  - name: gate
-    uniqueID: 3073449601
     locked: 0
   - name: Other
     uniqueID: 1333550439
