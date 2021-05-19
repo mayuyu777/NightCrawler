@@ -10,7 +10,7 @@ public class enemyfire : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject effect = Instantiate(hiteffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
+        Destroy(effect, 0.1f);
         Destroy(gameObject);
     }
 }

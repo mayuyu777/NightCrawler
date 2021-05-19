@@ -8,10 +8,6 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriterenderer;
     public float speed;
-    private float waitTime;
-    public float startwaitTime;
-    public Transform[] moveSpots;
-    private int randomSpot;
 
     public Transform target;
     [SerializeField] private float maxrange;
@@ -19,50 +15,51 @@ public class EnemyAI : MonoBehaviour
 
     public Transform firePoint;
     public GameObject fire;
-    public float fireforce = 20f;
+    public float fireforce = 5f;
     public float nextshoot;
     private bool attack;
 
     public int health = 20;
     public GameObject floatingpoint;
     public GameObject droppotion;
+    public bool isbattlestart = false;
+    public Transform home;
+    public BattleSystem battleSystem;
 
     void Start()
     {
         target = FindObjectOfType<Player>().transform;
-        waitTime = startwaitTime;
-        moveSpots[0].position = transform.position + new Vector3(2f,0f, 0f);
-        moveSpots[1].position = transform.position + new Vector3(-2f, 0f, 0f);
-        randomSpot = Random.Range(0, moveSpots.Length);
-
-     
-        print(moveSpots[0].position);
-        print(moveSpots[1].position);
-        print(transform.position);
     }
 
     void Update()
     {
-
-        if (Vector3.Distance(target.position, transform.position) <= maxrange && Vector3.Distance(target.position, transform.position) >= minrange)
+        if (isbattlestart)
         {
-            FollowPlayer();
-            attack = true;
-            
-
-        }
-        else if(Vector3.Distance(target.position, transform.position) >= maxrange)
-        {
-            movePosition();
-            attack = false;
-        }
-
-        if (attack)
-        {
-            if (Time.time > nextshoot)
+            if (Vector3.Distance(target.position, transform.position) <= maxrange && Vector3.Distance(target.position, transform.position) >= minrange)
             {
-                shoot();
-                nextshoot = Time.time + 1f;
+                FollowPlayer();
+                attack = true;
+
+
+            }
+            else if (Vector3.Distance(target.position, transform.position) >= maxrange)
+            {
+                movePosition();
+                attack = false;
+                if (Vector3.Distance(home.position, transform.position) <= 1.5f)
+                {
+                    animator.SetBool("isMoving", false);
+                }
+
+            }
+
+            if (attack)
+            {
+                if (Time.time > nextshoot)
+                {
+                    shoot();
+                    nextshoot = Time.time + 1f;
+                }
             }
         }
         
@@ -70,25 +67,13 @@ public class EnemyAI : MonoBehaviour
     void movePosition()
     {
         animator.SetBool("isMoving", true);
-        animator.SetFloat("X", (moveSpots[randomSpot].position.x - transform.position.x));
-        animator.SetFloat("Y", (moveSpots[randomSpot].position.y - transform.position.y));
+        animator.SetFloat("X", (home.position.x - transform.position.x));
+        animator.SetFloat("Y", (home.position.y - transform.position.y));
 
-        transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, home.position, speed * Time.deltaTime);
+       
 
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
-        {
-            if (waitTime <= 0)
-            {
 
-                randomSpot = Random.Range(0, moveSpots.Length);
-                waitTime = startwaitTime;
-            }
-            else
-            {
-                animator.SetBool("isMoving", false);
-                waitTime -= Time.deltaTime;
-            }
-        }
     }
     void FollowPlayer()
     {
@@ -125,6 +110,7 @@ public class EnemyAI : MonoBehaviour
             {
                 Destroy(gameObject);
                 Instantiate(droppotion, transform.position, Quaternion.identity);
+                battleSystem.enemyCount--;
             }
 
         }

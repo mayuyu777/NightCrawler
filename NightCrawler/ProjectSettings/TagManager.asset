@@ -56,12 +56,24 @@ TagManager:
   - name: Collision
     uniqueID: 1046154529
     locked: 0
+  - name: deco
+    uniqueID: 3627591205
+    locked: 0
+  - name: enemy
+    uniqueID: 27057911
+    locked: 0
   - name: Player
     uniqueID: 247465277
     locked: 0
   - name: Weapon
     uniqueID: 688541007
     locked: 0
+  - name: gate
+    uniqueID: 3073449601
+    locked: 0
   - name: Other
     uniqueID: 1333550439
+    locked: 0
+  - name: collision1
+    uniqueID: 3732390767
     locked: 0
