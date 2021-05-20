@@ -11,6 +11,8 @@ public class BattleSystem : MonoBehaviour
     public int enemyCount;
     public GameObject battleTrigger;
     public int random;
+    public GameObject clearedText;
+    public bool iscleared = false;
 
 
     void Awake()
@@ -30,7 +32,22 @@ public class BattleSystem : MonoBehaviour
         if (enemyCount <= 0)
         {
             battleTrigger.GetComponent<ColliderScript>().areaCleared();
+            if (!iscleared)
+            {
+                StartCoroutine(clearedSeconds());
+                iscleared = true;
+            }
+           
+
         }
+    }
+
+    private IEnumerator clearedSeconds()
+    {
+        clearedText.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+        clearedText.SetActive(false);
     }
 
   
@@ -40,6 +57,7 @@ public class BattleSystem : MonoBehaviour
         {
            
             StartBattle();
+            iscleared = false;
             colliderScript.OnPlayerEnterTrigger -= ColliderScript_OnPlayerEnterTrigger;
         }
  

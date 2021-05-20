@@ -12,6 +12,7 @@ public class ColliderScript : MonoBehaviour
     public bool playerexit = false;
     public bool cleared = false;
 
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (!active )
