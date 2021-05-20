@@ -13,26 +13,41 @@ public class Player : MonoBehaviour
     public Healthbar healthbar;
 
     public Animator animator;
+    public bool isDead;
 
     void Start()
     {
         currenthealth = maxhealth;
         healthbar.SetMaxHealth(maxhealth);
+        isDead = false;
     }
   
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("X", movement.x);
-        animator.SetFloat("Y", movement.y);
-
-        if( movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+        if (!isDead)
         {
-            animator.SetFloat("LastMoveX", movement.x);
-            animator.SetFloat("LastMoveY", movement.y);
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            animator.SetFloat("X", movement.x);
+            animator.SetFloat("Y", movement.y);
+
+            if (movement.x == 1 || movement.x == -1 || movement.y == 1 || movement.y == -1)
+            {
+                animator.SetFloat("LastMoveX", movement.x);
+                animator.SetFloat("LastMoveY", movement.y);
+            }
+            if(currenthealth <= 0)
+            {
+                GameOver();
+            }
         }
 
+    }
+
+    void GameOver()
+    {
+        print("YOU DIED!");
+        isDead = true;
     }
 
     void takeDamage(int damage)

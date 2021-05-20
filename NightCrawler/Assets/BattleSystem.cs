@@ -6,10 +6,12 @@ public class BattleSystem : MonoBehaviour
 {
     [SerializeField] private Transform[] enemies;
     [SerializeField] private ColliderScript colliderScript;
-    public EnemyAI enemytype;
+    public EnemyAI[] enemytype;
     private bool start;
     public int enemyCount;
     public GameObject battleTrigger;
+    public int random;
+
 
     void Awake()
     {
@@ -36,6 +38,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (!start)
         {
+           
             StartBattle();
             colliderScript.OnPlayerEnterTrigger -= ColliderScript_OnPlayerEnterTrigger;
         }
@@ -46,7 +49,8 @@ public class BattleSystem : MonoBehaviour
 
         foreach(Transform enemy in enemies)
         {
-            EnemyAI enemobject = Instantiate(enemytype, enemy.position, Quaternion.identity) as EnemyAI;
+            random = Random.Range(0, enemytype.Length);
+            EnemyAI enemobject = Instantiate(enemytype[random], enemy.position, Quaternion.identity) as EnemyAI;
             enemobject.home = enemy;
             enemobject.isbattlestart = true;
             enemobject.battleSystem = GetComponent<BattleSystem>();

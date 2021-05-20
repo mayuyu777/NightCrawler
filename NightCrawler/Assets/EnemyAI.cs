@@ -25,14 +25,18 @@ public class EnemyAI : MonoBehaviour
     public bool isbattlestart = false;
     public Transform home;
     public BattleSystem battleSystem;
+    public int shoottimes;
+
 
     void Start()
     {
         target = FindObjectOfType<Player>().transform;
+
     }
 
     void Update()
     {
+        
         if (isbattlestart)
         {
             if (Vector3.Distance(target.position, transform.position) <= maxrange && Vector3.Distance(target.position, transform.position) >= minrange)
@@ -88,9 +92,12 @@ public class EnemyAI : MonoBehaviour
 
     void shoot()
     {
+        
         GameObject bullet = Instantiate(fire, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * fireforce, ForceMode2D.Impulse);
+
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
