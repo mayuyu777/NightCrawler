@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public Animator animator;
     public bool isDead;
 
+    public GameOverScreen gameOverScreen;
+
     void Start()
     {
         currenthealth = maxhealth;
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
 
     void GameOver()
     {
-        print("YOU DIED!");
+        gameOverScreen.Setup();
         isDead = true;
     }
 

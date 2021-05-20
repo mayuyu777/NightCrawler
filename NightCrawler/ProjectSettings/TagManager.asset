@@ -59,6 +59,9 @@ TagManager:
   - name: deco
     uniqueID: 3627591205
     locked: 0
+  - name: dropitems
+    uniqueID: 3539428977
+    locked: 0
   - name: enemy
     uniqueID: 27057911
     locked: 0
