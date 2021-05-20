@@ -20,7 +20,7 @@ public class ColliderScript : MonoBehaviour
             if (collider.gameObject.tag == "Player")
             {
                 Debug.Log("Player is in the area");
-                OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
+                 OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
 
                 foreach (GameObject gate in gates)
                 {

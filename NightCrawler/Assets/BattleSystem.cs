@@ -62,7 +62,7 @@ public class BattleSystem : MonoBehaviour
         }
  
     }
-    private void StartBattle()
+    public void StartBattle()
     {
 
         foreach(Transform enemy in enemies)
