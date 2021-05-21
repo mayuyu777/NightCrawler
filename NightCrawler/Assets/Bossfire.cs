@@ -8,7 +8,7 @@ public class Bossfire : MonoBehaviour
     Player playerscript;
     public int damage = 15;
     public bool inside = true;
-    public float speed = 10f;
+    public float speed = 1f;
 
     void Start()
     {
@@ -25,10 +25,10 @@ public class Bossfire : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            while (inside)
-            {
-                StartCoroutine(damagePlayer());
-            }
+            //while (inside)
+           // {
+           //     StartCoroutine(damagePlayer());
+            //}
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
