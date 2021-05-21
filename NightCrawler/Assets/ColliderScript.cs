@@ -28,13 +28,23 @@ public class ColliderScript : MonoBehaviour
                     animator.SetBool("gateOpen", true);
                 }
 
-               
+                StartCoroutine(speedPlayer());
+
+
             }
             active = true;
         }
         
     }
 
+    private IEnumerator speedPlayer()
+    {
+        Player player = FindObjectOfType<Player>().GetComponent<Player>();
+        player.moveSpeed = 20f;
+        yield return new WaitForSeconds(1);
+        player.moveSpeed  = 10f;
+    }
+    
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (!playerexit)

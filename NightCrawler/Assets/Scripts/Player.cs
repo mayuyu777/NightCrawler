@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         isDead = true;
     }
 
-    void takeDamage(int damage)
+    public void takeDamage(int damage)
     {
         currenthealth -= damage;
         if (currenthealth < 0) { currenthealth = 0; }
