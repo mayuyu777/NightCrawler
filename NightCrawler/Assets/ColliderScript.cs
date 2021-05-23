@@ -40,7 +40,7 @@ public class ColliderScript : MonoBehaviour
     private IEnumerator speedPlayer()
     {
         Player player = FindObjectOfType<Player>().GetComponent<Player>();
-        player.moveSpeed = 20f;
+        player.moveSpeed = 15f;
         yield return new WaitForSeconds(1);
         player.moveSpeed  = 10f;
     }

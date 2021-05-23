@@ -13,6 +13,10 @@ public class BattleSystem : MonoBehaviour
     public int random;
     public GameObject clearedText;
     public bool iscleared = false;
+    public GameObject portal;
+    public Transform portaltrans;
+
+    public bool withboss;
 
 
     void Awake()
@@ -25,6 +29,7 @@ public class BattleSystem : MonoBehaviour
     {
         colliderScript.OnPlayerEnterTrigger += ColliderScript_OnPlayerEnterTrigger;
         enemyCount = enemies.Length;
+        if (withboss) { enemyCount++; }
     }
     
     void Update()
@@ -36,6 +41,7 @@ public class BattleSystem : MonoBehaviour
             {
                 StartCoroutine(clearedSeconds());
                 iscleared = true;
+                if (withboss) { portal.SetActive(true); }
             }
            
 
@@ -55,10 +61,11 @@ public class BattleSystem : MonoBehaviour
     {
         if (!start)
         {
-           
+
             StartBattle();
             iscleared = false;
             colliderScript.OnPlayerEnterTrigger -= ColliderScript_OnPlayerEnterTrigger;
+            if (withboss) { portal.SetActive(false); }
         }
  
     }
@@ -75,4 +82,7 @@ public class BattleSystem : MonoBehaviour
         }
         start = true;
     }
+
+
+
 }

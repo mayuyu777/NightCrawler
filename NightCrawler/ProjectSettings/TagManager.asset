@@ -65,6 +65,9 @@ TagManager:
   - name: enemy
     uniqueID: 27057911
     locked: 0
+  - name: boss
+    uniqueID: 1156873031
+    locked: 0
   - name: gate
     uniqueID: 3073449601
     locked: 0
