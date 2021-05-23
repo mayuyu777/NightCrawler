@@ -10,6 +10,9 @@ TagManager:
   - Enemyfire
   - mana
   - health
+  - Level1
+  - Level2
+  - Startpoint
   layers:
   - Default
   - TransparentFX

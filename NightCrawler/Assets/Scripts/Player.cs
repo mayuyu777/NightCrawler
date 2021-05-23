@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     {
         currenthealth = maxhealth;
         healthbar.SetMaxHealth(maxhealth);
+
         isDead = false;
         DontDestroyOnLoad(gameObject);
         players = GameObject.FindGameObjectsWithTag("Player");
@@ -33,6 +34,15 @@ public class Player : MonoBehaviour
             players[0] = players[1];
             Destroy(temp);
         }
+    }
+
+    public void ResetPlayerStat()
+    {
+        currenthealth = maxhealth;
+        healthbar.SetMaxHealth(maxhealth);
+
+        shooting shot = GetComponent<shooting>();
+        shot.resetManaStat();
     }
   
     private void Update()

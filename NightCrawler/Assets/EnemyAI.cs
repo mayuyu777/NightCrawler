@@ -28,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     public int shoottimes;
 
 
+
     void Start()
     {
         target = FindObjectOfType<Player>().transform;
@@ -36,7 +37,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        
+       
         if (isbattlestart)
         {
             if (Vector3.Distance(target.position, transform.position) <= maxrange && Vector3.Distance(target.position, transform.position) >= minrange)

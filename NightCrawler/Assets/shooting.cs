@@ -17,8 +17,7 @@ public class shooting : MonoBehaviour
 
     void Start()
     {
-        currentmana = maxmana;
-        manabar.SetMaxMana(maxmana);
+        resetManaStat();
     }
     void Update()
     {
@@ -26,6 +25,12 @@ public class shooting : MonoBehaviour
         {
             if (useMana(usage)){ shoot(); }
         }
+    }
+
+    public void resetManaStat()
+    {
+        currentmana = maxmana;
+        manabar.SetMaxMana(maxmana);
     }
 
     void shoot()
