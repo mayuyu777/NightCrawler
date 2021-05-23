@@ -277,12 +277,12 @@ MonoBehaviour:
   speed: 10
   target: {fileID: 0}
   maxrange: 20
-  minrange: 10
+  minrange: 13
   firePoint: {fileID: 4265493649527000584}
   fire: {fileID: 7418810997049218272, guid: 70ee732a7fbd8944b934395d28d6b998, type: 3}
   fireforce: 15
   nextshoot: 0
-  health: 20
+  health: 80
   floatingpoint: {fileID: 4127187423711595511, guid: 4344b05aee2e4c345a8a436f3bbf6e7e,
     type: 3}
   droppotion:
