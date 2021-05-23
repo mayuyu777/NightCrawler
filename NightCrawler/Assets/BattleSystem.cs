@@ -17,6 +17,8 @@ public class BattleSystem : MonoBehaviour
     public Transform portaltrans;
 
     public bool withboss;
+    public BossAI boss;
+    public Transform bosspos;
 
 
     void Awake()
@@ -80,7 +82,14 @@ public class BattleSystem : MonoBehaviour
             enemobject.isbattlestart = true;
             enemobject.battleSystem = GetComponent<BattleSystem>();
         }
+        if (withboss)
+        {
+            BossAI bossobject = Instantiate(boss,bosspos.position, Quaternion.identity) as BossAI;
+            bossobject.isbattlestart = true;
+            bossobject.battleSystem = GetComponent<BattleSystem>();
+        }
         start = true;
+        
     }
 
 

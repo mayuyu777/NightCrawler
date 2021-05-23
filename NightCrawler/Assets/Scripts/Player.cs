@@ -17,11 +17,22 @@ public class Player : MonoBehaviour
 
     public GameOverScreen gameOverScreen;
 
+    public GameObject[] players;
+    public GameObject temp;
+
     void Start()
     {
         currenthealth = maxhealth;
         healthbar.SetMaxHealth(maxhealth);
         isDead = false;
+        DontDestroyOnLoad(gameObject);
+        players = GameObject.FindGameObjectsWithTag("Player");
+        if(players.Length > 1)
+        {
+            temp = players[0];
+            players[0] = players[1];
+            Destroy(temp);
+        }
     }
   
     private void Update()
