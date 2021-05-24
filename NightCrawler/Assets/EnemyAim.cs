@@ -11,7 +11,7 @@ public class EnemyAim : MonoBehaviour
 
     void Start()
     {
-         target = FindObjectOfType<Player>().transform;
+        target = GameObject.FindWithTag("Player").transform;
     }
     private void Awake()
     {

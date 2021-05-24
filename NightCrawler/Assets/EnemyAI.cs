@@ -31,8 +31,15 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        target = FindObjectOfType<Player>().transform;
-
+        target = GameObject.FindWithTag("Player").transform;
+        if (target == null)
+        {
+            print("player is null ai");
+        }
+        else
+        {
+            print(target.position);
+        }
     }
 
     void Update()
