@@ -28,7 +28,7 @@ public class BossAI : MonoBehaviour
 
     void Start()
     {
-        target = FindObjectOfType<Player>().transform;
+        target = GameObject.FindWithTag("Player").transform;
 
     }
 
