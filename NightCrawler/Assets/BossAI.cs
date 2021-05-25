@@ -14,7 +14,7 @@ public class BossAI : MonoBehaviour
 
     public Transform firePoint;
     public GameObject fire;
-    public float fireforce = 5f;
+    public float fireforce = 10f;
     public float nextshoot;
     private bool attack;
 
@@ -57,7 +57,7 @@ public class BossAI : MonoBehaviour
                 if (Time.time > nextshoot)
                 {
                     shoot();
-                    nextshoot = Time.time + 0.4f;
+                    nextshoot = Time.time + 0.3f;
                 }
             }
         }
