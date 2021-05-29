@@ -97,16 +97,24 @@ public class Player : MonoBehaviour
         {
             int mana  = collision.gameObject.GetComponent<manapotion>().mana;
             shooting shootscript = gameObject.GetComponent<shooting>();
-            shootscript.increasemana(mana);
-            Destroy(collision.gameObject);
+            if(shootscript.currentmana != shootscript.maxmana)
+            {
+                shootscript.increasemana(mana);
+                Destroy(collision.gameObject);
+            }
+           
 
         }else if(collision.gameObject.tag == "health")
         {
-
+           
             int health = collision.gameObject.GetComponent<healthpotion>().health;
-            currenthealth = ((currenthealth + health) >= maxhealth) ? maxhealth : currenthealth + health;
-            healthbar.SetHealth(currenthealth);
-            Destroy(collision.gameObject);
+            if(currenthealth != maxhealth)
+            {
+                currenthealth = ((currenthealth + health) >= maxhealth) ? maxhealth : currenthealth + health;
+                healthbar.SetHealth(currenthealth);
+                Destroy(collision.gameObject);
+            }
+           
         }
     }
 
