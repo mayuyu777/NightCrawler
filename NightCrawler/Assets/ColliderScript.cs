@@ -27,7 +27,7 @@ public class ColliderScript : MonoBehaviour
                     animator = gate.GetComponent<Animator>();
                     animator.SetBool("gateOpen", true);
                 }
-
+             
                 StartCoroutine(speedPlayer());
 
 
@@ -42,7 +42,7 @@ public class ColliderScript : MonoBehaviour
         Player player = FindObjectOfType<Player>().GetComponent<Player>();
         player.moveSpeed = 15f;
         yield return new WaitForSeconds(1);
-        player.moveSpeed  = 10f;
+        player.moveSpeed  = 11f;
     }
     
     private void OnTriggerExit2D(Collider2D collider)
@@ -73,6 +73,8 @@ public class ColliderScript : MonoBehaviour
 
             }
             cleared = true;
+            Player player = FindObjectOfType<Player>().GetComponent<Player>();
+            player.moveSpeed = 10f;
         }
         
     }

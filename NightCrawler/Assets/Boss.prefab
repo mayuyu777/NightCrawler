@@ -287,6 +287,7 @@ MonoBehaviour:
     type: 3}
   droppotion:
   - {fileID: 2136315808294703163, guid: fbcab4c175582374f9a1e91a454e4092, type: 3}
+  - {fileID: 68340437320886081, guid: d674b2e3f444b444896ae8e19103d791, type: 3}
   isbattlestart: 1
   home: {fileID: 4265493649173044312}
   battleSystem: {fileID: 0}

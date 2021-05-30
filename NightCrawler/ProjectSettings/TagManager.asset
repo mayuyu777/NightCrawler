@@ -13,6 +13,7 @@ TagManager:
   - Level1
   - Level2
   - Startpoint
+  - CoinText
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ public class Portal : MonoBehaviour
             Player play = player.GetComponent<Player>();
             player.transform.position = startpoint.position;
 
-            play.ResetPlayerStat();
+           // play.ResetPlayerStat();
 
             StartCoroutine(disableLevel());
         }

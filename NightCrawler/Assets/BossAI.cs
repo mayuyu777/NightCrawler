@@ -107,8 +107,13 @@ public class BossAI : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
-                int index = Random.Range(0, droppotion.Length);
-                Instantiate(droppotion[index], transform.position, Quaternion.identity);
+                int x = 0;
+                foreach(GameObject drops in droppotion)
+                {
+                    
+                    Instantiate(drops, transform.position + new Vector3(x,0f,0f), Quaternion.identity);
+                    x+=2;
+                }
                 battleSystem.enemyCount--;
             }
 

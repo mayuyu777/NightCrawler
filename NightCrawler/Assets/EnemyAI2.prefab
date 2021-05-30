@@ -248,10 +248,12 @@ MonoBehaviour:
     type: 3}
   droppotion:
   - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
-  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
-  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
   - {fileID: 5159794216913557024, guid: d09ddec99a41b1743b308604e1eec639, type: 3}
   - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
+  - {fileID: 551737651182198624, guid: 447d829aeca6d8248b8a1abdfe324724, type: 3}
+  - {fileID: 551737651182198624, guid: 447d829aeca6d8248b8a1abdfe324724, type: 3}
+  - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
+  - {fileID: 5159794216913557024, guid: d09ddec99a41b1743b308604e1eec639, type: 3}
   isbattlestart: 0
   home: {fileID: 0}
   battleSystem: {fileID: 0}

@@ -116,6 +116,7 @@ MonoBehaviour:
   droppotion:
   - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
   - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
+  - {fileID: 551737651182198624, guid: 447d829aeca6d8248b8a1abdfe324724, type: 3}
   - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
   - {fileID: 5617371810111197076, guid: 43d4d3c42acf43e4294804d00d7ee48d, type: 3}
   isbattlestart: 0
