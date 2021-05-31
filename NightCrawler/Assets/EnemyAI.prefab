@@ -105,7 +105,7 @@ MonoBehaviour:
   speed: 3
   target: {fileID: 0}
   maxrange: 10
-  minrange: 3
+  minrange: 5
   firePoint: {fileID: 7861846239476381052}
   fire: {fileID: 9098813350038169613, guid: 1b354159f1d56ac40b2b4a20c8d8f2fe, type: 3}
   fireforce: 10

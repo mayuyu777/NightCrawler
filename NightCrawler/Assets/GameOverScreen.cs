@@ -9,6 +9,7 @@ public class GameOverScreen : MonoBehaviour
 {
 
     public UnityEngine.UI.Text text;
+    public GameObject main;
     public void Setup()
     {
         
@@ -37,6 +38,10 @@ public class GameOverScreen : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+
+        //main.SetActive(true);
+        // gameObject.SetActive(false);
+        //SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Game");
     }
 }
