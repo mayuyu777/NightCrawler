@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class Portal : MonoBehaviour
 {
 
-    public int level = 1;
+    public int level;
     public GameObject levelcanvas;
     public GameObject cleared;
+    public Transform startpoint;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
         if (collider.gameObject.tag == "Player")
         {
-            GameObject level1 = GameObject.FindWithTag("Level1");
+           
 
             cleared.SetActive(false);
             levelcanvas.SetActive(true);
 
-            Transform startpoint = GameObject.FindWithTag("Startpoint").transform;
             GameObject player = GameObject.FindWithTag("Player");
             Player play = player.GetComponent<Player>();
             player.transform.position = startpoint.position;

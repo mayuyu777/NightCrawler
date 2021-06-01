@@ -27,6 +27,8 @@ public class EnemyAI : MonoBehaviour
     public BattleSystem battleSystem;
     public int shoottimes;
 
+    public float timeShoot;
+
 
 
     void Start()
@@ -70,7 +72,7 @@ public class EnemyAI : MonoBehaviour
                 if (Time.time > nextshoot)
                 {
                     shoot();
-                    nextshoot = Time.time + 1f;
+                    nextshoot = Time.time + timeShoot;
                 }
             }
         }

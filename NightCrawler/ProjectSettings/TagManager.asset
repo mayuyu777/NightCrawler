@@ -56,6 +56,9 @@ TagManager:
   - name: Background
     uniqueID: 1055923643
     locked: 0
+  - name: Lava
+    uniqueID: 3427351201
+    locked: 0
   - name: Tile
     uniqueID: 951266347
     locked: 0
