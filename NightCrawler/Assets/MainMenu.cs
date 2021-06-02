@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Cinemachine.CinemachineVirtualCamera final;
+    public Cinemachine.CinemachineVirtualCamera main;
     public void ExitGame()
     {
         Application.Quit();
@@ -13,6 +15,8 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //SceneManager.LoadScene("Game");
+        final.Priority = 1;
+        main.Priority = 2;
         gameObject.SetActive(false);
     }
 }

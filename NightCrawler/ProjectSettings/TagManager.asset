@@ -16,6 +16,8 @@ TagManager:
   - CoinText
   - MainMenu
   - Level3
+  - FinalSceneCamera
+  - youwin
   layers:
   - Default
   - TransparentFX

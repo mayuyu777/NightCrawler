@@ -6,10 +6,15 @@ using UnityEngine.UI;
 public class Portal : MonoBehaviour
 {
 
-    public int level;
     public GameObject levelcanvas;
     public GameObject cleared;
     public Transform startpoint;
+    public bool isfinal = false;
+
+    public Cinemachine.CinemachineVirtualCamera final;
+    public FinalBoss boss;
+    public GameObject DemonHealthbar;
+
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -25,11 +30,26 @@ public class Portal : MonoBehaviour
             Player play = player.GetComponent<Player>();
             player.transform.position = startpoint.position;
 
-           // play.ResetPlayerStat();
+            // play.ResetPlayerStat();
+            if (isfinal)
+            {
+                final.Priority = 3;
+
+                StartCoroutine(waitBoss());
+                
+            }
 
             StartCoroutine(disableLevel());
         }
     }
+
+    public IEnumerator waitBoss()
+    {
+        DemonHealthbar.SetActive(true);
+        yield return new WaitForSeconds(5);
+        boss.isbattlestart = true;
+    }
+
 
     public IEnumerator disableLevel()
     {
