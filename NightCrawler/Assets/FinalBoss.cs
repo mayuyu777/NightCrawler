@@ -27,7 +27,8 @@ public class FinalBoss : MonoBehaviour
     public GameObject demonH;
     public Transform chalice;
 
-
+    public AudioClip shooteffect;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -103,7 +104,8 @@ public class FinalBoss : MonoBehaviour
         GameObject bullet = Instantiate(fire, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * fireforce, ForceMode2D.Impulse);
-
+        audioSource.clip = shooteffect;
+        audioSource.Play();
 
     }
 

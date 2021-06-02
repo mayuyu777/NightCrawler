@@ -13,6 +13,8 @@ public class shooting : MonoBehaviour
     public int damage = 5;
 
     public float fireforce = 20f;
+    public AudioClip shooteffect;
+    public AudioSource audioSource;
     // Update is called once per frame
 
     void Start()
@@ -38,6 +40,8 @@ public class shooting : MonoBehaviour
         GameObject bullet = Instantiate(fire, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * fireforce, ForceMode2D.Impulse);
+        audioSource.clip = shooteffect;
+        audioSource.Play();
     }
 
     bool useMana(int usage)

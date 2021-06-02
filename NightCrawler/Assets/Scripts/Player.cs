@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     public GameObject[] players;
     public GameObject temp;
+    
 
     void Start()
     {

@@ -24,6 +24,8 @@ public class BossAI : MonoBehaviour
     public bool isbattlestart = false;
     public Transform home;
     public BattleSystem battleSystem;
+    public AudioClip shooteffect;
+    public AudioSource audioSource;
 
 
     void Start()
@@ -87,6 +89,8 @@ public class BossAI : MonoBehaviour
         GameObject bullet = Instantiate(fire, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * fireforce, ForceMode2D.Impulse);
+        audioSource.clip = shooteffect;
+        audioSource.Play();
 
 
     }

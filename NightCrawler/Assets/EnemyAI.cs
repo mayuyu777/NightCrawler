@@ -29,6 +29,9 @@ public class EnemyAI : MonoBehaviour
 
     public float timeShoot;
 
+    public AudioClip shooteffect;
+    public AudioSource audioSource;
+
 
 
     void Start()
@@ -106,8 +109,10 @@ public class EnemyAI : MonoBehaviour
         GameObject bullet = Instantiate(fire, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * fireforce, ForceMode2D.Impulse);
+        audioSource.clip = shooteffect;
+        audioSource.Play();
 
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
