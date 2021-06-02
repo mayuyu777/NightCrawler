@@ -21,7 +21,11 @@ public class EnemyAim : MonoBehaviour
 
     private void Update()
     {
-        Aiming();
+        if (target != null)
+        {
+            Aiming();
+        }
+        
     }
 
     private void Aiming()
