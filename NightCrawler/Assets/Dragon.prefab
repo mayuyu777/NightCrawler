@@ -173,7 +173,7 @@ MonoBehaviour:
   floatingpoint: {fileID: 4127187423711595511, guid: 4344b05aee2e4c345a8a436f3bbf6e7e,
     type: 3}
   droppotion:
-  - {fileID: 2136315808294703163, guid: fbcab4c175582374f9a1e91a454e4092, type: 3}
+  - {fileID: 3077458885413086948, guid: b3b96f8671be6374ca299dc15d4289d8, type: 3}
   - {fileID: 68340437320886081, guid: d674b2e3f444b444896ae8e19103d791, type: 3}
   isbattlestart: 1
   home: {fileID: 6276811877649951333}
